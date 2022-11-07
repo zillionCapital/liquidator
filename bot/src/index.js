@@ -4,6 +4,8 @@ const { createClient, gql } = require('@urql/core');
 
 require('dotenv').config()
 
+const JOE_LIQUIDATOR_ABI = require('./abis/JoeLiquidator');
+
 const { JOE_LIQUIDATOR_CONTRACT_ADDRESS, WALLET_PRIVATE_KEY } = process.env;
 
 const INTERVAL_IN_MS = 10000;

@@ -2,7 +2,7 @@ const ethers = require('ethers');
 const fetch = require('isomorphic-unfetch');
 const { createClient, gql } = require('@urql/core');
 
-const JOE_LIQUIDATOR_ABI = require('./abis/JoeLiquidator');
+require('dotenv').config()
 
 const { JOE_LIQUIDATOR_CONTRACT_ADDRESS, WALLET_PRIVATE_KEY } = process.env;
 
@@ -57,7 +57,7 @@ const getJTokenData = (token) => {
 }
 
 /**
- * Returns borrow value in USD from a token. 
+ * Returns borrow value in USD from a token.
  * Calculated as `borrowBalanceUnderlying` * `underlyingPriceUSD`.
  */
 const getBorrowValueInUSD = (token) => {
@@ -67,7 +67,7 @@ const getBorrowValueInUSD = (token) => {
 }
 
 /**
- * Returns supply value in USD from a token. 
+ * Returns supply value in USD from a token.
  * Calculated as `supplyBalanceUnderlying` * `underlyingPriceUSD`.
  */
 const getSupplyValueInUSD = (token) => {
